@@ -70,7 +70,8 @@ public class VisionCameraTextRecognition: FrameProcessorPlugin {
     public override func callback(_ frame: Frame, withArguments arguments: [AnyHashable: Any]?) -> Any {
                 let buffer = frame.buffer
         let image = VisionImage(buffer: buffer)
-        image.orientation = getOrientation(orientation: frame.orientation)
+        // image.orientation = getOrientation(orientation: frame.orientation)
+        image.orientation = frame.orientation
 
         var result: Text
         do {
