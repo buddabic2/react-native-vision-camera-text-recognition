@@ -71,8 +71,6 @@ public class VisionCameraTextRecognition: FrameProcessorPlugin {
                 let buffer = frame.buffer
         let image = VisionImage(buffer: buffer)
         image.orientation = getOrientation(orientation: frame.orientation)
-        // print("orientation: \(frame.orientation)")
-        // image.orientation = frame.orientation
 
         var result: Text
         do {
