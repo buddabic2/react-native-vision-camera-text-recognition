@@ -70,9 +70,9 @@ public class VisionCameraTextRecognition: FrameProcessorPlugin {
     public override func callback(_ frame: Frame, withArguments arguments: [AnyHashable: Any]?) -> Any {
                 let buffer = frame.buffer
         let image = VisionImage(buffer: buffer)
-        // image.orientation = getOrientation(orientation: frame.orientation)
-        print("orientation: \(frame.orientation)")
-        image.orientation = frame.orientation
+        image.orientation = getOrientation(orientation: frame.orientation)
+        // print("orientation: \(frame.orientation)")
+        // image.orientation = frame.orientation
 
         var result: Text
         do {
@@ -226,17 +226,6 @@ public class VisionCameraTextRecognition: FrameProcessorPlugin {
     }
 
     private func getOrientation(orientation: UIImage.Orientation) -> UIImage.Orientation {
-        switch orientation {
-            case .right, .leftMirrored:
-                return .up
-            case .left, .rightMirrored:
-                return .down
-            case .up, .downMirrored:
-                return .left
-            case .down, .upMirrored:
-                return .right
-            default:
-                return .up
-        }
+        return .right
     }
 }
