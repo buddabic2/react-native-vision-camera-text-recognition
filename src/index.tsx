@@ -1,4 +1,4 @@
-import React, { forwardRef, type ForwardedRef, useMemo } from 'react';
+import { forwardRef, type ForwardedRef, useMemo } from 'react';
 import {
   Camera as VisionCamera,
   useFrameProcessor,
